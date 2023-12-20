@@ -13,7 +13,8 @@ package com.alexaleluia12.basic
 */
 
 /*
-A. Dado um número inteiro de rosquinhas, retorne uma string
+A. donuts
+Dado um número inteiro de rosquinhas, retorne uma string
 no formato 'Number of donuts: <contagem>', onde <contagem> é o número
 passado. No entanto, se a contagem for 10 ou mais, use a palavra 'many'
 em vez da contagem real.
@@ -26,7 +27,7 @@ fun donuts(n: Int): String {
 }
 
 /*
-B. both_ends
+B. bothEnds
 Dado uma string s, retorne uma string feita dos primeiros 2
 e os últimos 2 caracteres da string original,
 então 'spring' retorna 'spng'. No entanto, se o comprimento da string
@@ -41,7 +42,7 @@ fun bothEnds(s: String): String {
 }
 
 /*
-C. fix_start
+C. fixStart
 Dada uma string s, retorne uma string
 onde todas as ocorrências de seu primeiro caractere foram
 alteradas para '*', exceto o primeiro caractere em si.
@@ -50,12 +51,26 @@ Assuma que a string tem comprimento 1 ou mais.
 Dica: usar replace
 */
 fun fixStart(s: String): String {
+    assert(s.length >= 1)
     val firstCha = s[0]
     return firstCha + s.slice(1 ..< s.length).replace(firstCha, '*')
 }
 
-fun mix_up(s: String, v: String): String {
-    return ""
+
+/*
+D. MixUp
+Dadas as strings a e b, retorne uma única string com a e b separadas
+por um espaço '<a> <b>', mas troque os dois primeiros caracteres de cada string.
+Exemplo:
+'mix', 'pod' -> 'pox mid'
+'dog', 'dinner' -> 'dig donner'
+Assuma que a e b têm comprimento 2 ou mais.
+*/
+fun mixUp(s: String, v: String): String {
+    val firstPair = s.slice(0 ..< 2)
+    val secondPair = v.slice(0 ..< 2)
+
+    return "$secondPair${s.slice(2..< s.length)} $firstPair${v.slice(2 ..< v.length)}"
 }
 
 private fun test(got: String, expected: String) {
@@ -88,8 +103,8 @@ fun main() {
 
     println()
     println("mix_up")
-    test(mix_up("mix", "pod"), "pox mid")
-    test(mix_up("dog", "dinner"), "dig donner")
-    test(mix_up("gnash", "sport"), "spash gnort")
-    test(mix_up("pezzy", "firm"), "fizzy perm")
+    test(mixUp("mix", "pod"), "pox mid")
+    test(mixUp("dog", "dinner"), "dig donner")
+    test(mixUp("gnash", "sport"), "spash gnort")
+    test(mixUp("pezzy", "firm"), "fizzy perm")
 }
