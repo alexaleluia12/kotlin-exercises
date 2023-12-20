@@ -1,0 +1,53 @@
+package com.alexaleluia12.basic
+
+fun donuts(n: Int): String {
+    return ""   
+}
+
+fun both_ends(s: String): String {
+    return ""
+}
+
+fun fix_start(s: String): String {
+    return ""
+}
+
+fun mix_up(s: String, v: String): String {
+    return ""
+}
+
+private fun test(got: String, expected: String) {
+    val prefix = if (got == expected) " OK " else "  X "
+    println("${prefix} got: ${got.toString()} expected: ${expected.toString()}")
+}
+
+fun main() {
+    println("donuts")
+    // Each line calls donuts, compares its result to the expected for that call.
+    test(donuts(4), "Number of donuts: 4")
+    test(donuts(9), "Number of donuts: 9")
+    test(donuts(10), "Number of donuts: many")
+    test(donuts(99), "Number of donuts: many")
+
+    println()
+    println("both_ends")
+    test(both_ends("spring"), "spng")
+    test(both_ends("Hello"), "Helo")
+    test(both_ends("a"), "")
+    test(both_ends("xyz"), "xyyz")
+
+
+    println()
+    println("fix_start")
+    test(fix_start("babble"), "ba**le")
+    test(fix_start("aardvark"), "a*rdv*rk")
+    test(fix_start("google"), "goo*le")
+    test(fix_start("donut"), "donut")
+
+    println()
+    println("mix_up")
+    test(mix_up("mix", "pod"), "pox mid")
+    test(mix_up("dog", "dinner"), "dig donner")
+    test(mix_up("gnash", "sport"), "spash gnort")
+    test(mix_up("pezzy", "firm"), "fizzy perm")
+}
