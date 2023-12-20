@@ -25,8 +25,19 @@ fun donuts(n: Int): String {
     return "Number of donuts: $count"
 }
 
-fun both_ends(s: String): String {
-    return ""
+/*
+B. both_ends
+Dado uma string s, retorne uma string feita dos primeiros 2
+e os últimos 2 caracteres da string original,
+então 'spring' retorna 'spng'. No entanto, se o comprimento da string
+for menor que 2, retorne a string vazia.
+*/
+fun bothEnds(s: String): String {
+    return if (s.length < 2) {
+        ""
+    } else {
+        s.slice(0..< 2) + s.slice(s.length-2..< s.length)
+    }
 }
 
 fun fix_start(s: String): String {
@@ -52,10 +63,10 @@ fun main() {
 
     println()
     println("both_ends")
-    test(both_ends("spring"), "spng")
-    test(both_ends("Hello"), "Helo")
-    test(both_ends("a"), "")
-    test(both_ends("xyz"), "xyyz")
+    test(bothEnds("spring"), "spng")
+    test(bothEnds("Hello"), "Helo")
+    test(bothEnds("a"), "")
+    test(bothEnds("xyz"), "xyyz")
 
 
     println()
