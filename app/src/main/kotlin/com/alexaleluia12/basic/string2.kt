@@ -4,7 +4,7 @@ package com.alexaleluia12.basic
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
 
-# Google"s Python Class
+# Google's Python Class
 # http://code.google.com/edu/languages/google-python-class/
 
 # Copyright 2023 Alex Aleluia
@@ -25,10 +25,10 @@ fun main() {
 
     println()
     println("not_bad")
-    test(not_bad("This movie is not so bad"), "This movie is good")
-    test(not_bad("This dinner is not that bad!"), "This dinner is good!")
-    test(not_bad("This tea is not hot"), "This tea is not hot")
-    test(not_bad("It\"s bad yet not"), "It\"s bad yet not")
+    test(notBad("This movie is not so bad"), "This movie is good")
+    test(notBad("This dinner is not that bad!"), "This dinner is good!")
+    test(notBad("This tea is not hot"), "This tea is not hot")
+    test(notBad("It's bad yet not"), "It's bad yet not")
 
     println()
     println("front_back")
@@ -55,11 +55,26 @@ fun verbing(s: String): String {
     }
 }
 
+/*
+E. not bad
+Dada uma string, encontre a primeira ocorrência das
+sub-strings "not" e "bad". Se "bad" vier depois de "not",
+substitua toda a sub-string "not"..."bad" por "good".
+Retorne a string resultade. Então 'This dinner is not that bad!'
+gera This dinner is good!
+*/
 
-fun not_bad(s: String): String {
-    return ""
+fun notBad(s: String): String {
+    val positionNot = s.indexOf("not")
+    val positionBad = s.indexOf("bad")
+
+    return if (positionNot < positionBad)
+        s.slice(0..<positionNot) + "good" + s.slice(positionBad + 3..<s.length)
+    else
+        s
 }
 
 fun front_back(s: String, s1: String): String {
     return ""
 }
+
