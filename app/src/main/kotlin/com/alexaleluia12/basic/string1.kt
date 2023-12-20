@@ -1,6 +1,5 @@
 package com.alexaleluia12.basic
 /*
-#!/usr/bin/python3
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -11,6 +10,44 @@ package com.alexaleluia12.basic
 # Copyright 2023 Alex Aleluia
 # Licença MIT
 */
+
+
+
+private fun test(got: String, expected: String) {
+    val prefix = if (got == expected) " OK " else "  X "
+    println("${prefix} got: ${got.toString()} expected: ${expected.toString()}")
+}
+
+fun main() {
+    println("donuts")
+    // Each line calls donuts, compares its result to the expected for that call.
+    test(donuts(4), "Number of donuts: 4")
+    test(donuts(9), "Number of donuts: 9")
+    test(donuts(10), "Number of donuts: many")
+    test(donuts(99), "Number of donuts: many")
+
+    println()
+    println("both_ends")
+    test(bothEnds("spring"), "spng")
+    test(bothEnds("Hello"), "Helo")
+    test(bothEnds("a"), "")
+    test(bothEnds("xyz"), "xyyz")
+
+
+    println()
+    println("fix_start")
+    test(fixStart("babble"), "ba**le")
+    test(fixStart("aardvark"), "a*rdv*rk")
+    test(fixStart("google"), "goo*le")
+    test(fixStart("donut"), "donut")
+
+    println()
+    println("mix_up")
+    test(mixUp("mix", "pod"), "pox mid")
+    test(mixUp("dog", "dinner"), "dig donner")
+    test(mixUp("gnash", "sport"), "spash gnort")
+    test(mixUp("pezzy", "firm"), "fizzy perm")
+}
 
 /*
 A. donuts
@@ -71,40 +108,4 @@ fun mixUp(s: String, v: String): String {
     val secondPair = v.slice(0 ..< 2)
 
     return "$secondPair${s.slice(2..< s.length)} $firstPair${v.slice(2 ..< v.length)}"
-}
-
-private fun test(got: String, expected: String) {
-    val prefix = if (got == expected) " OK " else "  X "
-    println("${prefix} got: ${got.toString()} expected: ${expected.toString()}")
-}
-
-fun main() {
-    println("donuts")
-    // Each line calls donuts, compares its result to the expected for that call.
-    test(donuts(4), "Number of donuts: 4")
-    test(donuts(9), "Number of donuts: 9")
-    test(donuts(10), "Number of donuts: many")
-    test(donuts(99), "Number of donuts: many")
-
-    println()
-    println("both_ends")
-    test(bothEnds("spring"), "spng")
-    test(bothEnds("Hello"), "Helo")
-    test(bothEnds("a"), "")
-    test(bothEnds("xyz"), "xyyz")
-
-
-    println()
-    println("fix_start")
-    test(fixStart("babble"), "ba**le")
-    test(fixStart("aardvark"), "a*rdv*rk")
-    test(fixStart("google"), "goo*le")
-    test(fixStart("donut"), "donut")
-
-    println()
-    println("mix_up")
-    test(mixUp("mix", "pod"), "pox mid")
-    test(mixUp("dog", "dinner"), "dig donner")
-    test(mixUp("gnash", "sport"), "spash gnort")
-    test(mixUp("pezzy", "firm"), "fizzy perm")
 }
