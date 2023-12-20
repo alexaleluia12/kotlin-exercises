@@ -40,8 +40,18 @@ fun bothEnds(s: String): String {
     }
 }
 
-fun fix_start(s: String): String {
-    return ""
+/*
+C. fix_start
+Dada uma string s, retorne uma string
+onde todas as ocorrências de seu primeiro caractere foram
+alteradas para '*', exceto o primeiro caractere em si.
+exemplo 'babble' retorna 'ba**le'
+Assuma que a string tem comprimento 1 ou mais.
+Dica: usar replace
+*/
+fun fixStart(s: String): String {
+    val firstCha = s[0]
+    return firstCha + s.slice(1 ..< s.length).replace(firstCha, '*')
 }
 
 fun mix_up(s: String, v: String): String {
@@ -71,10 +81,10 @@ fun main() {
 
     println()
     println("fix_start")
-    test(fix_start("babble"), "ba**le")
-    test(fix_start("aardvark"), "a*rdv*rk")
-    test(fix_start("google"), "goo*le")
-    test(fix_start("donut"), "donut")
+    test(fixStart("babble"), "ba**le")
+    test(fixStart("aardvark"), "a*rdv*rk")
+    test(fixStart("google"), "goo*le")
+    test(fixStart("donut"), "donut")
 
     println()
     println("mix_up")
