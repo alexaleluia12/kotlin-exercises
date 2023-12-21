@@ -23,16 +23,16 @@ fun main() {
     test(matchEnds(listOf("", "x", "xy", "xyx", "xx")), 2)
     test(matchEnds(listOf("aaa", "be", "abc", "hello")), 1)
 
-    /*
-    println()
-    print("front_x")
-    test(front_x(["bbb", "ccc", "axx", "xzz", "xaa"]),
-        ["xaa", "xzz", "axx", "bbb", "ccc"])
-    test(front_x(["ccc", "bbb", "aaa", "xcc", "xaa"]),
-        ["xaa", "xcc", "aaa", "bbb", "ccc"])
-    test(front_x(["mix", "xyz", "apple", "xanadu", "aardvark"]),
-        ["xanadu", "xyz", "aardvark", "apple", "mix"])
 
+    println()
+    println("front_x")
+    test(front_x(listOf("bbb", "ccc", "axx", "xzz", "xaa")),
+        listOf("xaa", "xzz", "axx", "bbb", "ccc"))
+    test(front_x(listOf("ccc", "bbb", "aaa", "xcc", "xaa")),
+        listOf("xaa", "xcc", "aaa", "bbb", "ccc"))
+    test(front_x(listOf("mix", "xyz", "apple", "xanadu", "aardvark")),
+        listOf("xanadu", "xyz", "aardvark", "apple", "mix"))
+/*
 
     println()
     print("sort_last")
@@ -61,9 +61,26 @@ fun matchEnds(lst: List<String>): Int {
     }
     return count
 }
-
+/*
+B. front x
+Dada uma lista de strings, retorne uma lista com as strings
+em ordem alfabética, exceto agrupe todas as strings que começam com 'x' primeiro.
+Por exemplo, ['mix', 'xyz', 'apple', 'xanadu', 'aardvark']
+resulta em ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
+Dica: isso pode ser feito criando 2 listas e classificando cada uma delas antes de combiná-las.
+ */
 fun front_x(lst: List<String>): List<String> {
-    return listOf("oi")
+    val xlist = mutableListOf<String>()
+    val others = mutableListOf<String>()
+    for (s in lst) {
+        if (s.startsWith('x'))
+            xlist.add(s)
+        else
+            others.add(s)
+    }
+
+
+    return xlist.sorted() + others.sorted()
 }
 
 fun sort_last(lst: List<List<Int>>):List<List<Int>> {
