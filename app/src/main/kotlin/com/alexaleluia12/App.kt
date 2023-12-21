@@ -5,7 +5,7 @@ package com.alexaleluia12
 
 
 fun main() {
-   str.doWork()
+   lst.doWork()
 }
 
 
