@@ -1,12 +1,9 @@
-"""txt
+# Kotlin 1.9 - JRE 17 
 
-# JRE 17 
+## [String](./app/src/main/kotlin/com/alexaleluia12/MyString.kt)
 
 # run
 ./gradlew run
 
 # parei
-exercicio: string
-https://developers.google.com/edu/python/strings?hl=en
-
-"""
+https://developers.google.com/edu/python/lists?hl=en
