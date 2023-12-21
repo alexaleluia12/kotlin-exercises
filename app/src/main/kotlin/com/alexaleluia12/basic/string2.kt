@@ -32,9 +32,9 @@ fun main() {
 
     println()
     println("front_back")
-    test(front_back("abcd", "xy"), "abxcdy")
-    test(front_back("abcde", "xyz"), "abcxydez")
-    test(front_back("Kitten", "Donut"), "KitDontenut")
+    test(frontBack("abcd", "xy"), "abxcdy")
+    test(frontBack("abcde", "xyz"), "abcxydez")
+    test(frontBack("Kitten", "Donut"), "KitDontenut")
 }
 
 /*
@@ -74,7 +74,32 @@ fun notBad(s: String): String {
         s
 }
 
-fun front_back(s: String, s1: String): String {
-    return ""
+
+/*
+F. front_back
+Considere dividir uma string em duas metades.
+Se o comprimento for par, as metades frontal e traseira terão o mesmo comprimento.
+Se o comprimento for ímpar, diremos que o caractere extra vai para a metade frontal.
+Por exemplo, em 'abcde', a metade frontal é 'abc' e a metade traseira é 'de'.
+Dadas duas strings, a e b, retorne uma string no formato:
+a-front + b-front + a-back + b-back
+*/
+fun frontBack(s: String, v: String): String {
+    var middleFirst: Int = s.length / 2
+    if (s.length % 2 != 0) {
+        middleFirst += 1
+    }
+    var middleSecond: Int = v.length / 2
+    if (v.length % 2 != 0) {
+        middleSecond += 1
+    }
+
+    val frontFirst = s.slice( 0 ..< middleFirst)
+    val backFirst = s.slice(middleFirst ..< s.length)
+
+    val frontSecond = v.slice(0 ..< middleSecond)
+    val backSecond = v.slice(middleSecond ..< v.length)
+
+    return "$frontFirst$frontSecond$backFirst$backSecond"
 }
 
