@@ -48,8 +48,6 @@ fun main() {
         sortLast(listOf(listOf(1, 7), listOf(1, 3), listOf(3, 4, 5), listOf(2, 2))),
         listOf(listOf(2, 2), listOf(1, 3), listOf(3, 4, 5), listOf(1, 7))
     )
-
-
 }
 
 /*
@@ -97,7 +95,7 @@ Exemplo: [[1, 7], [1, 3], [3, 4, 5], [2, 2]] gera
  */
 fun sortLast(lst: List<List<Int>>): List<List<Int>> {
     /*
-    // tem mesmo resultadi
+    // tem mesmo resultado
     return lst.sortedWith{a, b ->
         a.last() - b.last()
     }
