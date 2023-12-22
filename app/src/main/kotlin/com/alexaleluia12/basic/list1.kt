@@ -32,18 +32,24 @@ fun main() {
         listOf("xaa", "xcc", "aaa", "bbb", "ccc"))
     test(front_x(listOf("mix", "xyz", "apple", "xanadu", "aardvark")),
         listOf("xanadu", "xyz", "aardvark", "apple", "mix"))
-/*
+
 
     println()
-    print("sort_last")
-    test(sort_last([(1, 3), (3, 2), (2, 1)]),
-    [(2, 1), (3, 2), (1, 3)])
-    test(sort_last([(2, 3), (1, 2), (3, 1)]),
-    [(3, 1), (1, 2), (2, 3)])
-    test(sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)]),
-    [(2, 2), (1, 3), (3, 4, 5), (1, 7)])
+    println("sort_last")
+    test(
+        sortLast(listOf(listOf(1, 3), listOf(3, 2), listOf(2, 1))),
+        listOf(listOf(2, 1), listOf(3, 2), listOf(1, 3))
+    )
+    test(
+        sortLast(listOf(listOf(2, 3), listOf(1, 2), listOf(3, 1))),
+        listOf(listOf(3, 1), listOf(1, 2), listOf(2, 3))
+    )
+    test(
+        sortLast(listOf(listOf(1, 7), listOf(1, 3), listOf(3, 4, 5), listOf(2, 2))),
+        listOf(listOf(2, 2), listOf(1, 3), listOf(3, 4, 5), listOf(1, 7))
+    )
 
-     */
+
 }
 
 /*
@@ -79,10 +85,22 @@ fun front_x(lst: List<String>): List<String> {
             others.add(s)
     }
 
-
     return xlist.sorted() + others.sorted()
 }
 
-fun sort_last(lst: List<List<Int>>):List<List<Int>> {
-    return listOf(listOf(9))
+/*
+C. sort last
+Dada uma lista de lista de inteiros, retorne a lista em ordem crescrente
+com base no último elemento de cada sublista
+Exemplo: [[1, 7], [1, 3], [3, 4, 5], [2, 2]] gera
+ [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
+ */
+fun sortLast(lst: List<List<Int>>): List<List<Int>> {
+    /*
+    // tem mesmo resultadi
+    return lst.sortedWith{a, b ->
+        a.last() - b.last()
+    }
+     */
+    return lst.sortedBy { it.last() }
 }

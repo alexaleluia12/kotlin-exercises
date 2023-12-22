@@ -30,11 +30,13 @@ bc.remove(elemento) : apenas remove caso  exista sem execoes e retorna um (Boole
 bc.sort() : ordena lista (crescente), alterando ela mesma in-place
 bc.reverse() : in-place reverte
     non in-place: sorted(), reversed()
+bc.sortedBy() : exemplo ondena lista de palavras pela ultima letra
+    lst.sortedBy { it.last() }
 ```
 
 # run
 ./gradlew run
 
 # parei
-exercicios list1
+exercicios list2
 https://developers.google.com/edu/python/lists?hl=en
