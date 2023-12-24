@@ -32,11 +32,13 @@ bc.reverse() : in-place reverte
     non in-place: sorted(), reversed()
 bc.sortedBy() : exemplo ondena lista de palavras pela ultima letra
     lst.sortedBy { it.last() }
+bc.getOrElse(index) : exemplo retorna valor default caso o indece nao exista, n~ lanca exceção
+    bc.getOrElse(0) { 1000 } // pega primeiro item da lista
 ```
 
 # run
 ./gradlew run
 
 # parei
-exercicios list2
-https://developers.google.com/edu/python/lists?hl=en
+exercicios sorting
+https://developers.google.com/edu/python/sorting?hl=en
