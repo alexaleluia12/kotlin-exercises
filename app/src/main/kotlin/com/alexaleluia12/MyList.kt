@@ -1,5 +1,9 @@
 package com.alexaleluia12
 
+import kotlin.math.floor
+import kotlin.math.round
+import kotlin.math.sqrt
+
 class lst {
     companion object {
         fun doWork() {
@@ -46,7 +50,29 @@ class lst {
             var ob = mutableListOf('a', 'b', 'c', 'd')
             println(ob.slice(1 ..< ob.size-1 ))
             // slice com atribuição não tem
+            // ordenacao
+            var oc = mutableListOf("ccc", "aaaa", "d", "bb")
+            println(oc.sortedBy { it.length }) // ordena pelo tamanho da palavra
 
+            // trible
+            var od = mutableListOf(
+                Triple("Freddy", "Frank", 3),
+                Triple("Anil", "Frank", 100),
+                Triple("Anil", "Wang", 24)
+            )
+            // ordenar pelo primeiro nome e score
+            println(od.sortedBy { it.first + it.third })
+
+            // 1 .. 100
+            // todo dos numero que sao quadrados perfeitos
+            val oe = List(100){ it+1 }
+            // [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+            println(oe.filter { v ->
+                val sv = sqrt(v.toFloat())
+                (sv - sv.toInt()) <= 0.0f
+            })
+            val oz = listOf(1, 2, 3, 4)
+            println(oz.map { it*it }) // [1, 4, 9, 16]
         }
     }
 }

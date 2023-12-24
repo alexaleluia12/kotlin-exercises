@@ -34,11 +34,22 @@ bc.sortedBy() : exemplo ondena lista de palavras pela ultima letra
     lst.sortedBy { it.last() }
 bc.getOrElse(index) : exemplo retorna valor default caso o indece nao exista, n~ lanca exceção
     bc.getOrElse(0) { 1000 } // pega primeiro item da lista
+exemplos map reduce:
+    val oe = List(100){ it+1 }
+    // quadrados perfeitos
+    // [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+    println(oe.filter { v ->
+        val sv = sqrt(v.toFloat())
+        (sv - sv.toInt()) <= 0.0f
+    })
+    
+    val oz = listOf(1, 2, 3, 4)
+    println(oz.map { it*it }) // [1, 4, 9, 16]
 ```
 
 # run
 ./gradlew run
 
 # parei
-exercicios sorting
-https://developers.google.com/edu/python/sorting?hl=en
+
+https://developers.google.com/edu/python/dict-files?hl=en
