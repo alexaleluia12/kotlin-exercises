@@ -5,7 +5,11 @@ package com.alexaleluia12
 
 
 fun main() {
+   str.doWork()
+   println("######################")
    lst.doWork()
+   println("######################")
+   map.doWork()
 }
 
 
