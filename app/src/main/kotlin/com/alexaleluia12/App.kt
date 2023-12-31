@@ -10,6 +10,10 @@ fun main() {
    lst.doWork()
    println("######################")
    map.doWork()
+   println("######################")
+   file.read()
+   file.write()
+   println("######################")
 }
 
 

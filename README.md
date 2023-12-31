@@ -47,42 +47,25 @@ exemplos map reduce:
     println(oz.map { it*it }) // [1, 4, 9, 16]
     
 ## [Map](./app/src/main/kotlin/com/alexaleluia12/MyMap.kt)
-val d = mutableMapOf<Char, String>()
-d['a'] = "alpha"
-d['g'] = "gamma"
-d['o'] = "omega"
+Map principais metodos
+    in
+    getOrElse
+    [key]
+    for: iteravel par key/value
+    * presenvar ordem de inserção
+Atributos
+    entries
+    keys
+    values
+    size
 
-println(d.toString())
-println(d['a'])
-d['a'] = "happy"
-println('a' in d)
-println(d['z']) // se chave nao existe retorna null
-// getValue() lanca exceção se não existir
-println(d.getOrElse('k') { "new" })
-// interacao
-for (v in d) {
-    println(v) // Par chave/valor
-}
-println(d.keys)
-println(d.values)
-// loop chave em ordem descrescente
-for (v in d.keys.sortedDescending()) {
-    println(d[v])
-}
-
-// lista de pares chave/valor
-println(d.entries)
-
-println("I'm ${d['a']}")
-
-// deletar par chave/valor
-println(d.remove('g'))
-println(d)
+## [File](./app/src/main/kotlin/com/alexaleluia12/MyFile.kt)
 ```
 
 # run
 ./gradlew run
 
 # parei
+https://developers.google.com/edu/python/regular-expressions?hl=en
 
-https://developers.google.com/edu/python/dict-files?hl=en
+TODO(fz um build apenas para wordcount) 
