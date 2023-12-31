@@ -45,8 +45,10 @@ exemplos map reduce:
     
     val oz = listOf(1, 2, 3, 4)
     println(oz.map { it*it }) // [1, 4, 9, 16]
-    
+```
+
 ## [Map](./app/src/main/kotlin/com/alexaleluia12/MyMap.kt)
+```text
 Map principais metodos
     in
     getOrElse
@@ -58,9 +60,9 @@ Atributos
     keys
     values
     size
+```
 
 ## [File](./app/src/main/kotlin/com/alexaleluia12/MyFile.kt)
-```
 
 # run
 ./gradlew run
