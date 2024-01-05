@@ -14,6 +14,8 @@ fun main() {
    file.read()
    file.write()
    println("######################")
+   re.doWork()
+
 }
 
 

@@ -64,10 +64,12 @@ Atributos
 
 ## [File](./app/src/main/kotlin/com/alexaleluia12/MyFile.kt)
 
+## [Regex](./app/src/main/kotlin/com/alexaleluia12/MyRegex.kt)
+
 # run
 ./gradlew run
 
 # parei
-https://developers.google.com/edu/python/regular-expressions?hl=en
+Exercicios babies names
 
 TODO(fz um build apenas para wordcount) 
