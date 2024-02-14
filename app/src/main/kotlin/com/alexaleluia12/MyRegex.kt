@@ -73,10 +73,10 @@ class re {
                 println(e.value)
             }
 
-            val brMarket = "B3 stock market values kepl3 agro, mrfg3 carne petr4 gas"
+            val brMarket = "B3 stock  market kel3 values kepl3 agro, mrfg3 carne petr4 gas"
             val r = Regex("""[a-z]{4}\d""").replace(brMarket, "NTS")
             println(r) // B3 stock market values NTS agro, NTS carne NTS gas
-            
+
         }
     }
 }
