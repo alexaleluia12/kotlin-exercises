@@ -1,4 +1,5 @@
 package com.alexaleluia12
+import java.io.File
 import kotlin.text.Regex
 
 class re {
@@ -31,6 +32,7 @@ class re {
             println(mtc?.value) // 5bc
             println()
             // [* + ?]
+            // * -> zero ou mais, + -> um ou mais, ? -> zero ou um
             mtc = Regex("""pi+""").find("piiig")
             println(mtc?.value) // piiig
             mtc = Regex("""i+""").find("piigiiii")
@@ -77,6 +79,19 @@ class re {
             val r = Regex("""[a-z]{4}\d""").replace(brMarket, "NTS")
             println(r) // B3 stock market values NTS agro, NTS carne NTS gas
 
+
+            val lt = listOf("app/src/main/resources/babynames/baby2002.html",
+                "app/src/main/resources/babynames/baby2008.html",
+                "app/src/main/resources/babynames/small.txt",
+                "app/src/main/resources/babynames/baby2006.html")
+            val ptx = Regex("""/baby.*.html""")
+            // em quanque posicao
+            println(ptx.containsMatchIn(lt[0])) // true
+            // em quanque posicao
+            val mtx = ptx.find(lt[0])
+            println(mtx?.value) // /babynames/baby2002.html
+            // Verifica na string TODA
+            println(ptx.matches(lt[0])) // false
         }
     }
 }

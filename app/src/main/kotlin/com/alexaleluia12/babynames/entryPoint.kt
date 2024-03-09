@@ -50,8 +50,8 @@ fun extractName(filename: String, resume: Boolean = false): List<String> {
         val patterns = regex.find(line)
         patterns?.let {
             val (position, maleName, femaleName) = it.groupValues.slice(1 until 4)
-            names[maleName] = min(position.toInt(), names.getOrDefault(femaleName, 4000))
-            names[femaleName] = min(position.toInt(), names.getOrDefault(maleName, 4000))
+            names[maleName] = min(position.toInt(), names.getOrDefault(femaleName, Int.MAX_VALUE))
+            names[femaleName] = min(position.toInt(), names.getOrDefault(maleName, Int.MAX_VALUE))
         }
     }
 
@@ -66,15 +66,15 @@ fun createResumeFile(filename: String, names: List<String>) {
     val newName = "$filename.summary"
     File(newName).writeText(names.joinToString("\n"))
 }
-// TODO(implement * operation baby*.html apply to all like bash)
+
 fun main(args: Array<String>) {
 
     if (args.isEmpty()) {
         println("usage: [--summaryfile] file [file ...]")
         return
     }
-
     val filesName: List<String>
+    val matchedFiles = mutableListOf<String>()
 
     var summary = false
     if (args.first() == "--summaryfile") {
@@ -84,7 +84,26 @@ fun main(args: Array<String>) {
         filesName = args.toList()
     }
 
-    for (f in filesName) {
+    val first = filesName.first()
+    if (first.contains("*")) {
+        // TODO(lidar com diretorio corrente)
+        val trimedFilePath = first.slice(0..first.indexOfLast {it == '/'})
+        val starPath = File(trimedFilePath)
+
+        // acho que pode dar erro se executado no diretorio corrente
+        val patterLast = first.slice(first.indexOfLast { it == '/'} .. first.lastIndex)
+        val regexPatterLast = Regex(patterLast.replace("*", ".*") + "\$") //
+
+        starPath.listFiles()?.let {workingFiles ->
+            for (f in workingFiles) {
+                if (regexPatterLast.containsMatchIn(f.path)) {
+                    matchedFiles.add(f.path)
+                }
+            }
+        }
+    }
+    val filesToProcess = if (matchedFiles.size > 0) matchedFiles else filesName
+    for (f in filesToProcess) {
         val lst = extractName(f)
         if (summary) {
             createResumeFile(f, lst)
