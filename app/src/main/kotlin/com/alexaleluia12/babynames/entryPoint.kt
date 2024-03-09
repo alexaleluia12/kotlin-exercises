@@ -86,15 +86,13 @@ fun main(args: Array<String>) {
 
     val first = filesName.first()
     if (first.contains("*")) {
-        // TODO(lidar com diretorio corrente)
-        val trimedFilePath = first.slice(0..first.indexOfLast {it == '/'})
-        val starPath = File(trimedFilePath)
+        val starFile = File(first)
+        val starPath = File(starFile.parent ?: ".")
 
-        // acho que pode dar erro se executado no diretorio corrente
-        val patterLast = first.slice(first.indexOfLast { it == '/'} .. first.lastIndex)
-        val regexPatterLast = Regex(patterLast.replace("*", ".*") + "\$") //
+        val patterLast = starFile.name
+        val regexPatterLast = Regex(patterLast.replace("*", ".*") + "\$")
 
-        starPath.listFiles()?.let {workingFiles ->
+        starPath.listFiles()?.let { workingFiles ->
             for (f in workingFiles) {
                 if (regexPatterLast.containsMatchIn(f.path)) {
                     matchedFiles.add(f.path)
