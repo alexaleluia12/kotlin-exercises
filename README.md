@@ -70,6 +70,7 @@ Atributos
 ./gradlew run
 
 # parei
-Exercicios babies names
+ex: copyspecial depois logPuzzel
 
-TODO(fz um build apenas para wordcount) 
+TODO:
+    BUILd separado para: wordcout, babynames, copyspecial
