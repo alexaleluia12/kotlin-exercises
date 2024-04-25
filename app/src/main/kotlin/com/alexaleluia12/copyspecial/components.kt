@@ -23,4 +23,14 @@ fun  copyFromTo(originPath: String, targetPath: String) {
 
 fun zip(lst: List<String>) {
 
+    /*
+    cmd: zip -j zipFileName <lista de todos os arquivos que vao ser zipados>.
+    usar process buider para executar comando zip
+     ProcessBuilder(*split(" ").toTypedArray())
+                .directory(workingDir)
+                .redirectOutput(Redirect.INHERIT)
+                .redirectError(Redirect.INHERIT)
+                .start()
+                .waitFor(60, TimeUnit.MINUTES)
+     */
 }

@@ -1,5 +1,3 @@
-package com.alexaleluia12.babynames
-
 import java.io.File
 import java.lang.Integer.min
 

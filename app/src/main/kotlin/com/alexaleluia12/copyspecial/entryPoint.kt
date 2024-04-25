@@ -19,7 +19,7 @@ $ ls /tmp/mywork
 
 C. Criar arquivo zip considerando o diretorio dado. Vai ser gerado executado um comando externo, zip.
 Comando para compresão: zip -j zipFileName <lista de todos os arquivos que vao ser zipados>.
-Também dever ser mostrado um printo com o comando e lista dos arquivos que serão zipados.
+Também dever ser mostrado um print com o comando e lista dos arquivos que serão zipados.
 ex: ./bin --tozip tmp.zip .
 Command I'm going to do:zip -j tmp.zip /usr/xpto/files/xyz__hello__.txt /usr/xpto/files/zz__something__.jpg
 

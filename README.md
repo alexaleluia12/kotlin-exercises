@@ -69,8 +69,15 @@ Atributos
 # run
 ./gradlew run
 
+
+# todo escrever
+build e execucao do Modulos separados
+distribuition e tals
+
 # parei
 ex: copyspecial depois logPuzzel
 
 TODO:
     BUILd separado para: wordcout, babynames, copyspecial
+    complementar readme
+    testar se os bilds separados funcionam corretamente
