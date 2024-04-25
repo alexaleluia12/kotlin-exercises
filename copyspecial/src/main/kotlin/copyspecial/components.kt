@@ -1,5 +1,3 @@
-package com.alexaleluia12.copyspecial
-
 import java.io.File
 import java.nio.file.Paths
 

@@ -1,6 +1,3 @@
-package com.alexaleluia12.copyspecial
-
-import java.io.File
 import kotlin.system.exitProcess
 
 /*
