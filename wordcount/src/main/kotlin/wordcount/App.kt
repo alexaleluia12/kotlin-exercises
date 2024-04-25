@@ -1,5 +1,3 @@
-package com.alexaleluia12.basic
-
 import java.io.File
 
 /*
