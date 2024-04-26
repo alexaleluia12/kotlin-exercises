@@ -70,14 +70,32 @@ Atributos
 ./gradlew run
 
 
-# todo escrever
-build e execucao do Modulos separados
-distribuition e tals
+# sub-projetos
+Pode ser feito o build separado de cada projeto (babynames, copyspecial, wordcount) entrando na pasta de cada um
+e executado `gradle build`. Ou na raiz **kotlin-exercises/** executar `./gradlew build :babynames`
 
-# parei
-ex: copyspecial depois logPuzzel
+Depois do build o executavel completo foi criado, no sub-projeto, dentro de build/distributions/*.{tar,zip}
+Ao desempacotar o .zip temos: bin/ lib/
+
+## bin/
+- projeto.bat: executavel para Windows
+- projeto: executavel Unix
+
+### rodar depois do build
+desempacote .tar
+
+`$./bin/wordcount --count ../mytxtfile`
+
+
+## Como criar sub-projetos usando gradle
+Em settings.gradle.kts, na raiz do projeto, na lista **include**
+escreva o nome do projeto "bala-bronze", por exemplo
+
+Ainda na raiz, rode: `$ mkdir -p bala-bronze/src/main/kotlin/`
+
+Copie o **build.gradle.kts** de app para bala-bronze (no mesmo nível de src/)
+
+Sincronize o gradle no projeto todo, Na IDE IntelliJ volte para settings.gradle e sync
 
 TODO:
-    BUILd separado para: wordcout, babynames, copyspecial
-    complementar readme
-    testar se os bilds separados funcionam corretamente
+    logPuzzel (ultima tarefa)
