@@ -52,7 +52,7 @@ fun main(args: Array<String>) {
 
     when {
         todir != null -> copyFromTo(wargs.first(), todir)
-        tozip != null -> zip(wargs)
+        tozip != null -> zip(tozip, wargs)
         else -> listFiles(wargs)
     }
 }

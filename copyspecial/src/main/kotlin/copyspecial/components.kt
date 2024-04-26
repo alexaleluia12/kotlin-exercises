@@ -19,16 +19,26 @@ fun  copyFromTo(originPath: String, targetPath: String) {
     }
 }
 
-fun zip(lst: List<String>) {
+fun zip(compressFile: String, lst: List<String>) {
+    val workingFiles = mutableListOf<File>()
 
-    /*
-    cmd: zip -j zipFileName <lista de todos os arquivos que vao ser zipados>.
-    usar process buider para executar comando zip
-     ProcessBuilder(*split(" ").toTypedArray())
-                .directory(workingDir)
-                .redirectOutput(Redirect.INHERIT)
-                .redirectError(Redirect.INHERIT)
-                .start()
-                .waitFor(60, TimeUnit.MINUTES)
-     */
+    for (path in lst) {
+        val file = File(path)
+        if (file.isDirectory) {
+            file.listFiles()?.also {
+                workingFiles.addAll(it)
+            }
+        } else {
+            workingFiles.add(file)
+        }
+    }
+    val paths = workingFiles.map { it.absolutePath }
+    val cmd = "zip -j ${compressFile}.zip ${paths.joinToString(separator = " ")}"
+    println("Command I'm going to do: $cmd")
+
+    val runSubProcess = ProcessBuilder(cmd.split(" "))
+        .redirectOutput(ProcessBuilder.Redirect.INHERIT)
+        .redirectError(ProcessBuilder.Redirect.INHERIT)
+
+    runSubProcess.start()
 }
