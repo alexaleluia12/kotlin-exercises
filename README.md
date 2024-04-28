@@ -66,6 +66,7 @@ Atributos
 
 ## [Regex](./app/src/main/kotlin/com/alexaleluia12/MyRegex.kt)
 
+## [Request http](./app/src/main/kotlin/com/alexaleluia12/MyRequest.kt)
 # run
 ./gradlew run
 
@@ -96,6 +97,3 @@ Ainda na raiz, rode: `$ mkdir -p bala-bronze/src/main/kotlin/`
 Copie o **build.gradle.kts** de app para bala-bronze (no mesmo nível de src/)
 
 Sincronize o gradle no projeto todo, Na IDE IntelliJ volte para settings.gradle e sync
-
-TODO:
-    logPuzzel (ultima tarefa)

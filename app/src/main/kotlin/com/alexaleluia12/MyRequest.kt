@@ -10,11 +10,11 @@ class get {
     companion object {
         fun doWork() {
             println("get data from: https://something.com")
-            val client = HttpClient.newBuilder().build();
+            val client = HttpClient.newBuilder().build()
             val request = HttpRequest.newBuilder()
                 .uri(URI.create("https://something.com"))
-                .build();
-            val response = client.send(request, BodyHandlers.ofString());
+                .build()
+            val response = client.send(request, BodyHandlers.ofString())
             println(response.body())
         }
     }

@@ -43,8 +43,10 @@ fun readUrls(filename: String): List<String> {
             }
         }
     }
-
-    return selectedUris.sorted().toSet().toList()
+    return selectedUris.sortedBy {
+        it.slice(it.lastIndexOf('/') .. (it.lastIndex-4))
+            .split('-').last()
+    }.toSet().toList()
 }
 
 // Extra functions to complement functionalities
@@ -144,6 +146,9 @@ B. index.html
     img0  img1  img2  img3  img4  img5  img6  img7  img8  img9  index.html
 
 C. codígo deve funcionar tmb para place_code
+    ordernar a url com base na segunda palavara de puzzle
+        /edu/languages/google-python-class/images/puzzle/p-bacg-bbdb.jpg -> bbdb
+
  */
 
 fun main(args: Array<String>) {
