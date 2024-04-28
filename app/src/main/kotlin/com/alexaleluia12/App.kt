@@ -5,17 +5,17 @@ package com.alexaleluia12
 
 
 fun main() {
-   str.doWork()
-   println("######################")
-   lst.doWork()
-   println("######################")
-   map.doWork()
-   println("######################")
-   file.read()
-   file.write()
-   println("######################")
-   re.doWork()
-
+//   str.doWork()
+//   println("######################")
+//   lst.doWork()
+//   println("######################")
+//   map.doWork()
+//   println("######################")
+//   file.read()
+//   file.write()
+//   println("######################")
+//   re.doWork()
+     get.doWork()
 }
 
 

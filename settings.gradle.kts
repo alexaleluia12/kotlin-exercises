@@ -9,4 +9,4 @@
  */
 
 rootProject.name = "kotlin-exercises"
-include("app", "babynames", "wordcount", "copyspecial")
+include("app", "babynames", "wordcount", "copyspecial", "logpuzzle")

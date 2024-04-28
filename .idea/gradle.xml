@@ -5,13 +5,13 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/babynames" />
             <option value="$PROJECT_DIR$/copyspecial" />
+            <option value="$PROJECT_DIR$/logpuzzle" />
             <option value="$PROJECT_DIR$/wordcount" />
           </set>
         </option>

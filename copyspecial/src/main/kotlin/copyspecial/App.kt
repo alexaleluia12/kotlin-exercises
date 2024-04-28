@@ -24,7 +24,6 @@ Em caso de erro encerar o programa com código de erro e mostrar o erro.
  */
 
 fun main(args: Array<String>) {
-
     val wargs = args.toMutableList()
     if (wargs.isEmpty()) {
         println("usage: [--todir dir][--tozip zipfile] dir [dir ...]")
